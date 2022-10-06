@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Grid, Typography, IconButton, Button, Slider } from '@mui/material';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -13,6 +13,7 @@ const App = () => {
   const theme = useTheme();
 
   const [passwordLength, setPasswordLength] = useState(5);
+  const [clipboard, setClipboard] = useState(false);
 
   const [checkbox, SetCheckbox] = useState({
     uppercase: true,
@@ -20,6 +21,8 @@ const App = () => {
     numbers: false,
     symbols: false,
   });
+
+  const [password, setPassword] = useState('');
 
   const changeCheckbox = (boxValue) => {
     SetCheckbox(boxValue);
@@ -31,24 +34,37 @@ const App = () => {
 
   let result = '';
 
-  const makePassword = (length) => {
+  const makePassword = (passwordlength) => {
     const charactersUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const charactersLower = 'abcdefghijklmnopqrstuvwxyz';
     const numbers = '0123456789';
     const symbols = '@#!)!(\'"$*';
     const charactersLength = charactersUpper.length;
-    for (let i = 0; i < length; i += 1) {
+    for (let i = 0; i < passwordlength; i += 1) {
       result += charactersUpper.charAt(Math.floor(Math.random()
  * charactersLength));
     }
+    setPassword(result);
     return result;
   };
 
-  function truncate(str, n) {
-    return (str.length > n) ? `${str.slice(0, n - 1)}&hellip;` : str;
-  }
+  useEffect(() => {
+    makePassword(passwordLength);
+  }, [passwordLength, checkbox]);
 
-  console.log(makePassword(passwordLength));
+  const clipboardDelay = () => {
+    return setTimeout(() => {
+      setClipboard(false);
+    }, '2000');
+  };
+
+  const copyToClipbaord = () => {
+    navigator.clipboard.writeText(password);
+    setClipboard(true);
+    clipboardDelay();
+  };
+
+  clearTimeout(clipboardDelay);
 
   return (
     <Box className="bg-violet main-container img-bg-svg">
@@ -60,26 +76,19 @@ const App = () => {
           <img className="girl" src="./src/assets/girl.svg" />
           <img className="cloud" src="./src/assets/cloud3.svg" />
           <Grid className="password-text" item xs={9}>
-            {makePassword(passwordLength)}
+            {password}
           </Grid>
-          <Grid className="password-text icon-text" item xs={10}>
+          <Grid className="password-text icon-text" item xs={10} sx={{ display: 'flex', alignItems: 'center' }}>
+            {clipboard && <Typography color="secondary" sx={{ fontSize: '1.5rem', fontFamily: 'JetBrains Mono, monospace' }}>COPIED</Typography>}
             <IconButton
-              onClick={() => { return console.log('clicked'); }}
+              onClick={copyToClipbaord}
               aria-label="copy"
               variant="soft"
               size="large"
               className="button-text"
+              color="secondary"
             >
-              <ContentCopyIcon color="primary" />
-            </IconButton>
-            <IconButton
-              onClick={() => { return console.log('clicked'); }}
-              aria-label="copy"
-              variant="soft"
-              size="large"
-              className="button-text"
-            >
-              <VisibilityIcon color="primary" />
+              <ContentCopyIcon color="secondary" />
             </IconButton>
           </Grid>
         </Grid>

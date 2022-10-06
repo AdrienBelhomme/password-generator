@@ -50,7 +50,7 @@ const Strength = (props) => {
           >
             {imageAndmessage.message.toUpperCase()}
           </Typography>
-          <Grid sx={{ marginLeft: '1rem' }}>
+          <Grid sx={{ marginLeft: '1rem', display: 'flex' }}>
             <img src={imageAndmessage.image} className="strength-img" />
           </Grid>
         </Grid>
