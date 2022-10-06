@@ -1,0 +1,20 @@
+.checkbox {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.checkbox > span {
+    color: #F2994A;
+} 
+
+.MuiFormControlLabel-label {
+    color: black!important;
+    font-family: 'JetBrains Mono'!important;
+    font-style: normal!important;
+    font-weight: 500!important;
+    font-size: 18px!important;
+    line-height: 24px!important;
+}

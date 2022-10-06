@@ -1,0 +1,174 @@
+
+/* colors from Figma */
+.gray {
+  color: #F2F2F2;
+  text-align: center;
+}
+
+.violet {
+  color: #7B7AFF
+}
+
+.bg-violet {
+  background: url(./assets/clouds.svg), linear-gradient(270deg, #5E5CFF 1.35%, #7B7AFF 72.77%);
+}
+
+.img-bg-svg {
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat-x,repeat;
+  background-position: 50% 50%, 90% 60%;
+}
+
+.icon-text {
+  width: fit-content!important;
+  flex-basis: auto!important;
+}
+
+.button-text {
+  outline:0;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-text:focus {
+  outline:0;
+}
+
+.password-box {
+    text-align: left;
+    background: white;
+    flex-grow: 0;
+    margin: auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.password-text {
+  width: 100%;
+  max-width: 100%;
+  flex-basis: 100%;
+  font-family: 'JetBrains Mono', monospace!important;
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 700;
+}
+
+
+.main-container {
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container h1 {
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 0 auto;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.top-container {
+  margin: auto;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.text-length {
+  font-family: 'JetBrains Mono'!important;
+  font-style: normal;
+  font-weight: 700!important;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+
+.button-generate {
+width: 100%;
+max-width: 100%!important;
+flex-basis: 100%!important;
+font-family: 'JetBrains Mono', monospace!important;
+font-size: 32px!important;
+line-height: 42px!important;
+font-weight: 700!important;
+}
+
+.girl {
+  position: absolute;
+  top: 12.1rem;
+  right: 43rem;
+  width: 150px;
+}
+
+.cloud {
+  top: 15.12rem;
+  left: 44rem;
+  width: 111px;
+  position: absolute;
+}
+
+.button-generate-inside {
+  width: 100%!important;
+  max-width: 100%!important;
+  flex-basis: 100%!important;
+  font-size: 18px!important;
+  font-weight: 700!important;
+  line-height: 42px!important;
+  border-radius: 12px!important;
+  padding: 0.7rem!important;
+  border: 2px solid!important;
+  color: #F2994A!important;
+  box-shadow: rgb(0 0 0 / 24%) 0px 2px 8px!important;
+}
+.button-generate-inside:hover {
+border: 2px solid #F2994A!important;
+background-color: #F2994A!important;
+color: white!important;
+}
+
+.slider-text {
+  font-family: 'JetBrains Mono'!important;
+  font-style: normal!important;
+  font-size: 32px!important;
+  line-height: 24px!important;
+}
+
+.slider {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem !important;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0!important;
+}
+
+.strength-container {
+  margin-bottom: 3rem!important;
+  background: #7B7AFF;
+  color: white;
+  border-radius: 12px;
+  }
+
+.value-length {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

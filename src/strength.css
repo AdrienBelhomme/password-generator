@@ -1,0 +1,15 @@
+.strength-text {
+    width: 100%;
+    max-width: 100%;
+    flex-basis: 100%;
+    font-family: 'JetBrains Mono', monospace!important;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0;
+}
+
+.strength-box {
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+}
