@@ -1,22 +1,25 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { Checkbox, FormControlLabel, FormGroup, Switch } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import './Checkbox.css';
+import './Form.css';
 
 const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-const Form = () => {
-  /* const [uppercase, setUppercase] = useState(true);
-  const [lowercase, setLowercase] = useState(true);
-  const [numbers, setNumbers] = useState(false);
-  const [symbols, setSymbols] = useState(false); */
+const Form = (props) => {
+  const { changeCheckbox } = props;
   const [checkbox, SetCheckbox] = useState({
     uppercase: true,
     lowercase: true,
     numbers: false,
     symbols: false,
   });
+
+  const change = (event) => {
+    console.log(event.target.value);
+    console.log(changeCheckbox(event.target.value));
+    // changeCheckbox(event.target.value);
+  };
 
   const handleChange = (event) => {
     if (event.target.name === 'uppercase') {
@@ -30,7 +33,9 @@ const Form = () => {
     }
   };
 
-  console.log(checkbox);
+  useEffect(() => {
+    changeCheckbox(checkbox);
+  }, [checkbox]);
 
   return (
     <FormGroup onChange={handleChange} className="checkbox">

@@ -7,9 +7,15 @@
     font-weight: 700;
     line-height: 24px;
     margin: 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .strength-box {
     padding: 2rem 2.5rem;
     border-radius: 12px;
+}
+
+.strength-img {
+    width: 3rem;
 }
