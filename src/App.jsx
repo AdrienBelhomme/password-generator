@@ -39,18 +39,27 @@ const App = () => {
     const charactersLower = 'abcdefghijklmnopqrstuvwxyz';
     const numbers = '0123456789';
     const symbols = '@#!)!(\'"$*';
-    const charactersLength = charactersUpper.length;
+
+    const allCharacters = (checkbox.uppercase && charactersUpper ? charactersUpper : '')
+    + (checkbox.lowercase && charactersLower ? charactersLower : '')
+    + (checkbox.numbers && numbers ? numbers : '') + (checkbox.symbols && symbols ? symbols : '');
+
+    const charactersLength = allCharacters.length;
     for (let i = 0; i < passwordlength; i += 1) {
-      result += charactersUpper.charAt(Math.floor(Math.random()
+      result += allCharacters.charAt(Math.floor(Math.random()
  * charactersLength));
     }
     setPassword(result);
     return result;
   };
 
-  useEffect(() => {
+  /*  useEffect(() => {
     makePassword(passwordLength);
-  }, [passwordLength, checkbox]);
+  }, [passwordLength, checkbox]); */
+
+  const generatePassword = () => {
+    makePassword(passwordLength);
+  };
 
   const clipboardDelay = () => {
     return setTimeout(() => {
@@ -68,7 +77,12 @@ const App = () => {
 
   return (
     <Box className="bg-violet main-container img-bg-svg">
-      <Grid className="container" container>
+      <Grid
+        className="container"
+        container
+        sx={{ paddingTop: '5vh',
+        }}
+      >
         <Grid item xs={12}>
           <Typography className="gray" variant="h1" fontSize="24px">Password Generator</Typography>
         </Grid>
@@ -120,6 +134,7 @@ const App = () => {
           <Grid className="button-generate" item xs={10}>
             <Button
               className="button-generate-inside"
+              onClick={generatePassword}
               sx={{
               }}
               variant="outlined"
