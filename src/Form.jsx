@@ -1,4 +1,5 @@
-import { Checkbox, FormControlLabel, FormGroup } from '@mui/material';
+/* eslint-disable react/jsx-props-no-spreading */
+import { Checkbox, FormControlLabel, FormGroup, Switch } from '@mui/material';
 import { useState } from 'react';
 
 import './Checkbox.css';
@@ -33,10 +34,10 @@ const Form = () => {
 
   return (
     <FormGroup onChange={handleChange} className="checkbox">
-      <FormControlLabel name="uppercase" control={<Checkbox value={checkbox.uppercase} defaultChecked color="secondary" />} className="checkbox" label="Include Uppercase Letters" />
-      <FormControlLabel name="lowercase" control={<Checkbox value={checkbox.lowercase} defaultChecked color="secondary" />} className="checkbox" label="Include Lowercase Letters" />
-      <FormControlLabel name="numbers" control={<Checkbox value={checkbox.numbers} color="secondary" />} className="checkbox" label="Include Numbers" />
-      <FormControlLabel name="symbols" control={<Checkbox value={checkbox.symbols} color="secondary" className="checkbox" />} className="checkbox" label="Include Symbols" />
+      <FormControlLabel name="uppercase" control={<Switch value={checkbox.uppercase} defaultChecked color="secondary" />} className="checkbox" label="Include Uppercase Letters" />
+      <FormControlLabel name="lowercase" control={<Switch value={checkbox.lowercase} defaultChecked color="secondary" />} className="checkbox" label="Include Lowercase Letters" />
+      <FormControlLabel name="numbers" control={<Switch value={checkbox.numbers} color="secondary" />} className="checkbox" label="Include Numbers" />
+      <FormControlLabel name="symbols" control={<Switch value={checkbox.symbols} color="secondary" />} className="checkbox" label="Include Symbols" />
     </FormGroup>
 
   );
