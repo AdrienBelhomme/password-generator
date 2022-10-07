@@ -15,6 +15,20 @@
   -webkit-text-size-adjust: 100%;
 }
 
+/* <img className="cloud" src="./src/assets/cloud3.svg" /> */
+
+.svg-bg {
+  background: url(./src/assets/girl.svg);
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat-x,repeat;
+  background-position: inherit;
+  height: 500px;
+  position: absolute;
+  top: -2vh;
+  left: 55vw;
+  width: 500px;
+}
+
+
 button:focus {
   outline:0;
 }

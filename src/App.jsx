@@ -78,7 +78,7 @@ const App = () => {
   return (
     <Box className="bg-violet main-container img-bg-svg">
       <Grid
-        className="container"
+        className="container girl-bg"
         container
         sx={{ paddingTop: '5vh',
         }}
@@ -86,14 +86,22 @@ const App = () => {
         <Grid item xs={12}>
           <Typography className="gray" variant="h1" fontSize="24px">Password Generator</Typography>
         </Grid>
-        <Grid className="password-box flex-space-between" item container xs={12} sm={6} md={6} lg={4} xl={4}>
-          <img className="girl" src="./src/assets/girl.svg" />
-          <img className="cloud" src="./src/assets/cloud3.svg" />
+        <Grid
+          className="password-box flex-space-between"
+          item
+          container
+          sx={{ margin: '3vh 0' }}
+          xs={12}
+          sm={6}
+          md={6}
+          lg={4}
+          xl={4}
+        >
           <Grid className="password-text" item xs={9}>
             {password}
           </Grid>
           <Grid className="password-text icon-text" item xs={10} sx={{ display: 'flex', alignItems: 'center' }}>
-            {clipboard && <Typography color="secondary" sx={{ fontSize: '1.5rem', fontFamily: 'JetBrains Mono, monospace' }}>COPIED</Typography>}
+            {clipboard && <Typography color="secondary" sx={{ fontSize: '1rem', fontFamily: 'JetBrains Mono, monospace' }}>COPIED</Typography>}
             <IconButton
               onClick={copyToClipbaord}
               aria-label="copy"
@@ -107,7 +115,7 @@ const App = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid className="container" container>
+      <Grid className="container" container sx={{ marginBottom: '3vh' }}>
 
         <Grid className="password-box" item container xs={12} sm={6} md={6} lg={4} xl={4}>
           <Grid className="value-length">

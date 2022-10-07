@@ -13,6 +13,14 @@
   background: url(./assets/clouds.svg), linear-gradient(270deg, #5E5CFF 1.35%, #7B7AFF 72.77%);
 }
 
+.girl-bg {
+  background-image: url(./src/assets/girl.svg)!important; 
+  background-repeat: no-repeat, no-repeat, no-repeat!important;
+  background-position-x: 55vw!important;
+  background-position-y: 0vh!important;
+}
+
+
 .img-bg-svg {
   background-repeat: no-repeat, no-repeat, no-repeat, repeat-x,repeat;
   background-position: 50% 50%, 90% 60%;
@@ -172,4 +180,10 @@ color: white!important;
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+@media (max-width: 899px) {
+  .bg-violet {
+    padding: 5%;
+  }
 }
