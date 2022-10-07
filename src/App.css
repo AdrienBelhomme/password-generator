@@ -14,7 +14,7 @@
 }
 
 .girl-bg {
-  background-image: url(./src/assets/girl.svg)!important; 
+  background-image: url(./assets/girl.svg)!important; 
   background-repeat: no-repeat, no-repeat, no-repeat!important;
   background-position-x: 55vw!important;
   background-position-y: 0vh!important;
